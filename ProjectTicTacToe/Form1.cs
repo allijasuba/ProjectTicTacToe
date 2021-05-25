@@ -12,6 +12,9 @@ namespace ProjectTicTacToe
 {
     public partial class TicTacToe : Form
     {
+        bool turn = true;
+        int turn_count = 0;
+
         public TicTacToe()
         {
             InitializeComponent();
@@ -26,6 +29,18 @@ namespace ProjectTicTacToe
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button_click(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+            if (turn)
+                b.Text = "X";
+            else
+                b.Text = "O";
+
+            turn = !turn;
+            b.Enabled = false;
         }
     }
 }
