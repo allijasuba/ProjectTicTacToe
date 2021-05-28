@@ -41,6 +41,7 @@ namespace ProjectTicTacToe
 
             turn = !turn;
             b.Enabled = false;
+            turn_count++;
 
             checkForWinner();
     
@@ -57,9 +58,26 @@ namespace ProjectTicTacToe
             else if ((C1.Text == C2.Text) && (C2.Text == C3.Text) && (!C1.Enabled))
                 there_is_a_winner = true;
 
+            //vertical checks
+            else if ((A1.Text == B1.Text) && (B1.Text == C1.Text) && (!A1.Enabled))
+                there_is_a_winner = true;
+            else if ((A2.Text == B2.Text) && (B2.Text == C2.Text) && (!A2.Enabled))
+                there_is_a_winner = true;
+            else if ((A3.Text == B3.Text) && (B3.Text == C3.Text) && (!A3.Enabled))
+                there_is_a_winner = true;
 
-            if(there_is_a_winner)
-            {
+            //diagonal checks
+            else if ((A1.Text == B2.Text) && (B2.Text == C3.Text) && (!A1.Enabled))
+                there_is_a_winner = true;
+            else if ((A3.Text == B2.Text) && (B2.Text == C1.Text) && (!C1.Enabled))
+                there_is_a_winner = true;
+
+
+            if (there_is_a_winner)
+                {
+
+                disableButtons();
+
                 String winner = "";
                 if (turn)
                     winner = "O";
@@ -67,12 +85,30 @@ namespace ProjectTicTacToe
                     winner = "X";
 
                 MessageBox.Show(winner + " Wins!", "Congrats!");
-            }
+                }//end if
+                else
+                {
+                if (turn_count == 9)
+                    MessageBox.Show("Draw", "Try again");
+                }
+
 
             }
     
-    
-    
-    
+            private void disableButtons()
+            {
+                try
+                {
+                    foreach (Control c in Controls)
+                    {
+                    Button b = (Button)c;
+                    b.Enabled = false;
+                    }
+
+
+
+                }
+                catch { }
+            }
     }       
 }
