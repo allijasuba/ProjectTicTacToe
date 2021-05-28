@@ -110,5 +110,25 @@ namespace ProjectTicTacToe
                 }
                 catch { }
             }
+
+        private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            turn = true;
+            turn_count = 0;
+
+            try
+            {
+                foreach (Control c in Controls)
+                {
+                    Button b = (Button)c;
+                    b.Enabled = true;
+                    b.Text = "";
+                }
+
+
+
+            }
+            catch { }
+        }
     }       
 }
