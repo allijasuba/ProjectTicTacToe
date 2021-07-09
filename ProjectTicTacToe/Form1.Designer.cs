@@ -70,14 +70,14 @@ namespace ProjectTicTacToe
             // newGameToolStripMenuItem
             // 
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.newGameToolStripMenuItem.Text = "New Game";
             this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -202,6 +202,8 @@ namespace ProjectTicTacToe
             this.Controls.Add(this.A1);
             this.Controls.Add(this.menuStrip1);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(375, 420);
+            this.MinimumSize = new System.Drawing.Size(375, 420);
             this.Name = "TicTacToe";
             this.ShowIcon = false;
             this.Text = "Tic Tac Toe";
